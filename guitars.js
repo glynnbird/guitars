@@ -34,14 +34,13 @@ var doSearch = function(searchText,filter, callback) {
   // render the query and filter
 //  $('#qs').html(q);  
   var limit = 10;  
-  var counts = ["type","range","brand","country"];    
+  var counts = ["type","range","brand","country","year"];    
   var qs = {
       q: q,
       limit:limit,
       counts: JSON.stringify(counts),
       include_docs:true
     };  
-  console.log(qs);     
 
   var obj = {
     url: CLOUDANT_URL + "/guitars/_design/search/_search/search",
@@ -109,6 +108,7 @@ var renderSerps = function(data, searchterm, filter) {
   html += renderFacetGroup("range","Range",data.counts);
   html += renderFacetGroup("brand","Brand",data.counts);
   html += renderFacetGroup("country","Country",data.counts);
+  html += renderFacetGroup("year","Year",data.counts);
   html += '</div>';
   $('#facets').html(html);
   
@@ -187,7 +187,6 @@ var submitForm = function() {
   var searchterm = $('#searchterm').val();
   filter = [ ];
   doSearch(searchterm, { }, function(err, data) {
-    console.log(err, data);
     renderSerps(data, searchterm, filter);
   });
   return false;

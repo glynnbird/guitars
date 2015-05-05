@@ -1,0 +1,16 @@
+#searchterm {
+  width: 480px;
+}
+
+#loading {
+  display:none;
+  font-size:16px;
+}
+
+.notbig {
+  max-height:150px;
+}
+
+.gap {
+  margin-right:10px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guitar store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="guitars.css" />
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="guitars.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    
+  </head>
+  <body>
+  
+    <div class="container-fluid">
+      
+      
+      <form class="form-inline" onsubmit="return submitForm();">
+        <div class="form-group">
+          <input type="text" class="form-control" id="searchterm" placeholder="What guitar do you want? e.g Fender Strat">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <span id="loading" class="glyphicon glyphicon-refresh spinning"></span>
+      </form>
+      
+      
+      <div class="row">
+        <div id="searchtitle" class="col-md-12">
+          
+        </div>
+      </div>
+      <div class="row"> 
+        <div id="serps" class="col-md-10"></div>
+        <div id="facets" class="col-md-2"></div>
+      </div>
+ 
+      
+      
+      
+    </div>
+  </body>
+</html>
